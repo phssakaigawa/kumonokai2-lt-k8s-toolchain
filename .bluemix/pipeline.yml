@@ -116,7 +116,6 @@ stages:
   - name: Vulnerability Advisor
     type: tester
     test_type: vulnerabilityadvisor
-    use_image_from_build_input: true
     fail_stage: false
     target:
       region_id: ${PROD_REGION_ID}
