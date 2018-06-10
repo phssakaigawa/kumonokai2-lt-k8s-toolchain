@@ -214,10 +214,10 @@ stages:
       kubectl apply -f deployment.yml  
       echo ""
       echo "DEPLOYED SERVICE:"
-      kubectl describe services hello-service
+      kubectl describe services tjdev-lt-k8s-service
       echo ""
       echo "DEPLOYED PODS:"
-      kubectl describe pods --selector app=hello-app
-      PORT=$( kubectl get services | grep hello-service | sed 's/.*:\([0-9]*\).*/\1/g' )
+      kubectl describe pods --selector app=tjdev-lt-k8s-app
+      PORT=$( kubectl get services | grep tjdev-lt-k8s-service | sed 's/.*:\([0-9]*\).*/\1/g' )
       echo ""
       echo "VIEW THE APPLICATION AT: http://$IP_ADDR:$PORT"
