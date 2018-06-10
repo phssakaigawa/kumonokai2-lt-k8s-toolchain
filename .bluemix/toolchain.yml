@@ -9,39 +9,39 @@ template:
   header: '![](toolchain.svg?localize)'
   icon: secure-lock-kubernetes.svg
   required:
-    - hello-world-build
-    - hello-world-repo
+    - tjdev-lt-k8s-app-build
+    - tjdev-lt-k8s-app-repo
   info:
     git url: >-
-      [https://github.com/open-toolchain/secure-kube-toolchain](https://github.com/open-toolchain/secure-kube-toolchain)
+      [https://github.com/phssakaigawa/tjdev-lt-k8s-toolchain](https://github.com/phssakaigawa/tjdev-lt-k8s-toolchain)
     git branch: >-
-      [master](https://github.com/open-toolchain/secure-kube-toolchain/tree/master)
+      [master](https://github.com/phssakaigawa/tjdev-lt-k8s-toolchain/tree/master)
 toolchain:
-  name: 'secure-kubernetes-toolchain-{{timestamp}}'
+  name: 'tjdev-lt-k8s-toolchain-{{timestamp}}'
   template:
     getting_started:
       $ref: "#/messages/template.gettingStarted" 
 services:
-  hello-world-repo:
-    service_id: hostedgit
+  tjdev-lt-k8s-app-repo:
+    service_id: githubpublic
     parameters:
-      repo_name: 'hello-containers-{{timestamp}}'
-      repo_url: 'https://github.com/open-toolchain/hello-containers'
-      type: clone
+      repo_name: 'tjdev-lt-k8s-app'
+      repo_url: 'https://github.com/phssakaigawa/tjdev-lt-k8s-app'
+      type: link
       has_issues: true
       enable_traceability: true
-  hello-world-build:
+  tjdev-lt-k8s-app-build:
     service_id: pipeline
     parameters:
       services:
-        - hello-world-repo
-      name: 'hello-world-{{timestamp}}'
+        - tjdev-lt-k8s-app-repo
+      name: 'tjdev-lt-k8s-app-{{timestamp}}'
       ui-pipeline: true
       configuration:
         content:
           $text: pipeline.yml
         env:
-          GIT_REPO: hello-world-repo
+          GIT_REPO: tjdev-lt-k8s-app-repo
           CF_APP_NAME: '{{form.pipeline.parameters.app-name}}'
           PROD_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
           REGISTRY_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
@@ -51,9 +51,12 @@ services:
         execute: true
   webide:
     service_id: orion
+  messaging:
+    service_id: slack
+    $ref: slack.yml
 form:
   pipeline:
     parameters:
-      app-name: '{{services.hello-world-repo.parameters.repo_name}}'
+      app-name: '{{services.tjdev-lt-k8s-app-repo.parameters.repo_name}}'
     schema:
       $ref: deploy.json
