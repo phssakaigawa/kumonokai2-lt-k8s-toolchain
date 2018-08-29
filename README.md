@@ -1,5 +1,5 @@
 # use case IBM Cloud Kubernetes Service + DevOps ToolChain Demo
-## ThinkJapan - Developer Day Developer Night LT Cloud Native Technology
+## トレノケ雲の会 mod.2「雲の通ひ路」(クラウド/コンテナ勉強会)
 
 本レポジトリは、Github open-toolchainに公開されている[Continuously deliver a secure Docker app to a Bluemix Kubernetes Cluster](https://github.com/open-toolchain/secure-kube-toolchain)から、
 内容をカスタマイズしたレポジトリです。
@@ -9,7 +9,7 @@ LTで紹介したToolChainをのデモ用レポジトリとなります。
 `ご注意`本レポジトリのToolChainデモにはIBM Cloudの従量料金(pay-as-you-go)アカウントとIBM Cloud Container Serviceの標準クラスター以上のクラスタの設定が必須です
 
 ### ToolChainをご自身のIBM Cloud アカウントにデプロイするには以下のCreate ToolChainボタンをクリックしてください。:
-[![Deploy To Bluemix](https://console.bluemix.net/devops/graphics/create_toolchain_button.png)](https://console.bluemix.net/devops/setup/deploy/?repository=https%3A//github.com/phssakaigawa/tjdev-lt-k8s-toolchain)
+[![Deploy To Bluemix](https://console.bluemix.net/devops/graphics/create_toolchain_button.png)](https://console.bluemix.net/devops/setup/deploy/?repository=https%3A//github.com/phssakaigawa/kumonokai2-lt-k8s-toolchain)
 
 
 # ![Icon](./.bluemix/secure-lock-kubernetes.png) Develop a Kubernetes app
@@ -25,7 +25,7 @@ Any code change to the Git repo will automatically be built, validated and deplo
 ![Icon](./.bluemix/toolchain.png)
 
 ### To get started, click this button:
-[![Deploy To Bluemix](https://console.bluemix.net/devops/graphics/create_toolchain_button.png)](https://console.bluemix.net/devops/setup/deploy/?repository=https%3A//github.com/phssakaigawa/tjdev-lt-k8s-toolchain)
+[![Deploy To Bluemix](https://console.bluemix.net/devops/graphics/create_toolchain_button.png)](https://console.bluemix.net/devops/setup/deploy/?repository=https%3A//github.com/phssakaigawa/kumonokai2-lt-k8s-toolchain)
 
 ---
 ### Learn more 

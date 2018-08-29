@@ -9,39 +9,39 @@ template:
   header: '![](toolchain.svg?localize)'
   icon: secure-lock-kubernetes.svg
   required:
-    - tjdev-lt-k8s-app-build
-    - tjdev-lt-k8s-app-repo
+    - kumonokai2-lt-k8s-app-build
+    - kumonokai2-lt-k8s-app-repo
   info:
     git url: >-
-      [https://github.com/phssakaigawa/tjdev-lt-k8s-toolchain](https://github.com/phssakaigawa/tjdev-lt-k8s-toolchain)
+      [https://github.com/phssakaigawa/kumonokai2-lt-k8s-toolchain](https://github.com/phssakaigawa/kumonokai2-lt-k8s-toolchain)
     git branch: >-
-      [master](https://github.com/phssakaigawa/tjdev-lt-k8s-toolchain/tree/master)
+      [master](https://github.com/phssakaigawa/kumonokai2-lt-k8s-toolchain/tree/master)
 toolchain:
-  name: 'tjdev-lt-k8s-toolchain-{{timestamp}}'
+  name: 'kumonokai2-lt-k8s-toolchain-{{timestamp}}'
   template:
     getting_started:
       $ref: "#/messages/template.gettingStarted" 
 services:
-  tjdev-lt-k8s-app-repo:
+  kumonokai2-lt-k8s-app-repo:
     service_id: githubpublic
     parameters:
-      repo_name: 'tjdev-lt-k8s-app'
-      repo_url: 'https://github.com/phssakaigawa/tjdev-lt-k8s-app'
+      repo_name: 'kumonokai2-lt-k8s-app'
+      repo_url: 'https://github.com/phssakaigawa/kumonokai2-lt-k8s-app'
       type: link
       has_issues: true
       enable_traceability: true
-  tjdev-lt-k8s-app-build:
+  kumonokai2-lt-k8s-app-build:
     service_id: pipeline
     parameters:
       services:
-        - tjdev-lt-k8s-app-repo
-      name: 'tjdev-lt-k8s-app-{{timestamp}}'
+        - kumonokai2-lt-k8s-app-repo
+      name: 'kumonokai2-lt-k8s-app-{{timestamp}}'
       ui-pipeline: true
       configuration:
         content:
           $text: pipeline.yml
         env:
-          GIT_REPO: tjdev-lt-k8s-app-repo
+          GIT_REPO: kumonokai2-lt-k8s-app-repo
           CF_APP_NAME: '{{form.pipeline.parameters.app-name}}'
           PROD_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
           REGISTRY_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
@@ -57,6 +57,6 @@ services:
 form:
   pipeline:
     parameters:
-      app-name: '{{services.tjdev-lt-k8s-app-repo.parameters.repo_name}}'
+      app-name: '{{services.kumonokai2-lt-k8s-app-repo.parameters.repo_name}}'
     schema:
       $ref: deploy.json
