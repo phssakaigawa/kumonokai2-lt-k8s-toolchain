@@ -1,4 +1,4 @@
-# use case IBM Cloud Kubernetes Service + DevOps ToolChain Demo
+# IBM Cloud Kubernets Serviceで使うコンテナ環境 デモ
 ## トレノケ雲の会 mod.2「雲の通ひ路」(クラウド/コンテナ勉強会)
 
 本レポジトリは、Github open-toolchainに公開されている[Continuously deliver a secure Docker app to a Bluemix Kubernetes Cluster](https://github.com/open-toolchain/secure-kube-toolchain)から、
